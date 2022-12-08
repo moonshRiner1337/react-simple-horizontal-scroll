@@ -47,7 +47,8 @@
   "build": "react-scripts build",
   "eject": "react-scripts eject",
   "test": "jest --watch --verbose --coverage",
-  "npm:build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files"
+  "npm:build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files",
+  "npm:publish": "npm run npm:build && npm publish"
  },
  "eslintConfig": {
   "extends": [
