@@ -1,0 +1,31 @@
+.horizontalScrollWrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 0 auto;
+
+  /* hide scrollbar */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  user-select: none;
+
+  /* overflow behavior */
+  overflow-x: auto;
+  overscroll-behavior: contain;
+
+  /* scroll snapping */
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: 0;
+
+  /* is needed to get correct offsetLeft value */
+  position: 'relative',
+}
+
+.horizontalScrollWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontalScrollWrapper>* {
+  scroll-snap-align: start;
+}
