@@ -43,7 +43,6 @@ h1 {
 .app {
     background-color: var(--primary-color);
     width: 100vw;
-    min-height: 100vh;
 }
 
 .showAllWrapper {

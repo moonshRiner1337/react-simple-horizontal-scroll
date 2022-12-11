@@ -19,7 +19,7 @@
   scroll-padding-inline: 0;
 
   /* is needed to get correct offsetLeft value */
-  position: 'relative',
+  position: relative;
 }
 
 .horizontalScrollWrapper::-webkit-scrollbar {
