@@ -88,3 +88,29 @@ function Component() {
   );
 }
 ```
+
+## Usage - for Github only
+
+### Checkout project
+
+```
+$ git clone https://github.com/DerWebschreiner/react-simple-horizontal-scroll.git
+```
+
+### install
+
+```
+$ npm install
+```
+
+### start demo
+
+```
+$ npm run start
+```
+
+### run tests
+
+```
+$ npm run test
+```
