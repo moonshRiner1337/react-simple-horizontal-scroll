@@ -6,6 +6,7 @@
     "url": "git+https://github.com/DerWebschreiner/React-Simple-Horizontal-Scroll.git"
   },
   "license": "ISC",
+  "type": "module",
   "devDependencies": {
     "@types/react": "^18.0.26",
     "react": "^18.2.0",
