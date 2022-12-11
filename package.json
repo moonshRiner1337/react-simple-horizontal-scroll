@@ -7,14 +7,13 @@
     "components",
     "ui"
   ],
-  "version": "1.0.9",
+  "version": "1.0.11",
   "private": false,
   "license": "ISC",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
-    "dist",
-    "README.md"
+    "dist"
   ],
   "repository": {
     "type": "git",
@@ -43,7 +42,7 @@
     "start": "react-scripts start",
     "test": "jest --watch --verbose --coverage",
     "npm:build": "rm -rf dist && tsc --project tsconfig.npm.json && node npmTools/generatePackageJson.js && cp README.md src/lib/HorizontalScroll.styles.css ./dist ",
-    "npm:publish": "npm run npm:build && npm publish"
+    "npm:publish": "npm run npm:build && npm publish ./dist"
   },
   "eslintConfig": {
     "extends": [
