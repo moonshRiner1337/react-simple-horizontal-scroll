@@ -8,6 +8,7 @@ function App() {
   const ref = React.useRef<HorizontalScrollHandle>(null);
   const [showAll, setShowAll] = React.useState(false);
   const [isShowAllAvailable, setIsShowAllAvailable] = React.useState(false);
+  const [scrollTo, setScrollTo] = React.useState(0);
 
   React.useEffect(() => {
     const handler = () => {
@@ -24,10 +25,14 @@ function App() {
     };
   }, [ref, setIsShowAllAvailable]);
 
-  function onClickHandler(index: number) {
+  React.useEffect(() => {
     if (ref?.current) {
-      ref.current.scrollToIndex(index);
+      ref.current.scrollToIndex(scrollTo);
     }
+  }, [scrollTo, ref, showAll]);
+
+  function onClickHandler(index: number) {
+    setScrollTo(index);
   }
 
   function showAllHandler() {
@@ -50,13 +55,13 @@ function App() {
       <div className="card">
         <div className="contentWrapper">
           <h1>Simple Horizontal Scroll React Component Demo</h1>
-          {isShowAllAvailable && <button onClick={showAllHandler}>{showAll ? 'Show Less' : 'Show All'}</button>}
-          {!showAll && (
-            <p>
-              <label htmlFor="scrollto">Scroll to item</label>
-              <input id="scrollto" type="number" min={1} step={1} defaultValue="1" onChange={changeHandler} />
-            </p>
+          {(isShowAllAvailable || showAll) && (
+            <button onClick={showAllHandler}>{showAll ? 'Show Less' : 'Show All'}</button>
           )}
+          <p>
+            <label htmlFor="scrollto">Scroll to item</label>
+            <input id="scrollto" type="number" min={1} step={1} value={scrollTo + 1} onChange={changeHandler} />
+          </p>
         </div>
 
         <HorizontalScroll
