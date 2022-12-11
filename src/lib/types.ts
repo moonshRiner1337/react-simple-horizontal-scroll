@@ -27,6 +27,14 @@ export type HorizontalScrollProps = {
    * the value will be set to false if the item is inactive
    */
   activeDataAttribute?: string;
+  /**
+   * layout option to render the scroller
+   * SCROLL -> renders the items in a row with a scroll
+   * FLOAT -> renders the items in float layout without scroll
+   *
+   * @default 'SCROLL'
+   */
+  layout?: 'SCROLL' | 'FLOAT';
 };
 
 export type HorizontalScrollHandle = {

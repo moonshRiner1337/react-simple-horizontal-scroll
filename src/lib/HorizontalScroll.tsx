@@ -5,7 +5,7 @@ import { HorizontalScrollHandle, HorizontalScrollProps } from './types';
 import './HorizontalScroll.styles.css';
 
 const HorizontalScrollComponent: React.ForwardRefRenderFunction<HorizontalScrollHandle, HorizontalScrollProps> = (
-  { offset = 0, gap = 0, scrollToItemIndex = 0, activeDataAttribute, children },
+  { offset = 0, gap = 0, scrollToItemIndex = 0, activeDataAttribute, layout = 'SCROLL', children },
   ref
 ) => {
   const wrapperRef = React.useRef<HTMLDivElement | null>(null);
@@ -27,7 +27,7 @@ const HorizontalScrollComponent: React.ForwardRefRenderFunction<HorizontalScroll
   return (
     <section
       ref={wrapperRef}
-      className="horizontalScrollWrapper"
+      className={layout === 'SCROLL' ? 'horizontalScrollWrapper' : 'floatWrapper'}
       style={{ gap, padding: `0 ${offset}`, scrollPaddingInline: offset }}
     >
       {React.Children.map(children, (child, index) => {

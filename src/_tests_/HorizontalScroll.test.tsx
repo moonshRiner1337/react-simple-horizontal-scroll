@@ -113,6 +113,32 @@ describe('HorizontalScroll', () => {
     });
   });
 
+  describe('Layout tests', () => {
+    it('should render wrapper with class horizontalScrollWrapper if component was called without Layout prop', () => {
+      const { container } = render(<HorizontalScroll>{getContent(4)}</HorizontalScroll>);
+
+      const wrapper = container.querySelector('section');
+
+      expect(wrapper?.classList.contains('horizontalScrollWrapper')).toBeTruthy();
+    });
+
+    it('should render wrapper with class horizontalScrollWrapper if component was called with Layout prop "SCROLL"', () => {
+      const { container } = render(<HorizontalScroll layout="SCROLL">{getContent(4)}</HorizontalScroll>);
+
+      const wrapper = container.querySelector('section');
+
+      expect(wrapper?.classList.contains('horizontalScrollWrapper')).toBeTruthy();
+    });
+
+    it('should render wrapper with class floatWrapper if component was called with Layout prop "FLOAT"', () => {
+      const { container } = render(<HorizontalScroll layout="FLOAT">{getContent(4)}</HorizontalScroll>);
+
+      const wrapper = container.querySelector('section');
+
+      expect(wrapper?.classList.contains('floatWrapper')).toBeTruthy();
+    });
+  });
+
   describe('initialScroll', () => {
     it('should not call scrollToItem if scrollToItemIndex is 0', () => {
       render(

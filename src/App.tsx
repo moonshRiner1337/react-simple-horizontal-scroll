@@ -26,7 +26,7 @@ function App() {
 
   function onClickHandler(index: number) {
     if (ref?.current) {
-      ref.current.scrollToIndex(index - 1);
+      ref.current.scrollToIndex(index);
     }
   }
 
@@ -35,7 +35,7 @@ function App() {
   }
 
   function changeHandler(event: React.ChangeEvent<HTMLInputElement>) {
-    onClickHandler(parseInt(event.target.value, 10));
+    onClickHandler(parseInt(event.target.value, 10) - 1);
   }
   const content = Array.from({ length: 10 }, (v, i) => i).map((index) => {
     return (
@@ -58,19 +58,17 @@ function App() {
             </p>
           )}
         </div>
-        {!showAll ? (
-          <HorizontalScroll
-            gap={'1rem'}
-            scrollToItemIndex={0}
-            activeDataAttribute="data-active"
-            offset={'2rem'}
-            ref={ref}
-          >
-            {content}
-          </HorizontalScroll>
-        ) : (
-          <div className="showAllWrapper">{content}</div>
-        )}
+
+        <HorizontalScroll
+          gap={'1rem'}
+          scrollToItemIndex={0}
+          activeDataAttribute="data-active"
+          offset={'2rem'}
+          ref={ref}
+          layout={showAll ? 'FLOAT' : 'SCROLL'}
+        >
+          {content}
+        </HorizontalScroll>
       </div>
     </div>
   );

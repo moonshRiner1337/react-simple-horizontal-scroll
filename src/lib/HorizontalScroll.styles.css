@@ -29,3 +29,8 @@
 .horizontalScrollWrapper>* {
   scroll-snap-align: start;
 }
+
+.floatWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}

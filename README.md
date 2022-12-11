@@ -27,12 +27,13 @@ import type { HorizontalScrollHandle } from 'react-simple-horizontal-scroll/dist
 
 ## Props
 
-| Prop                | Description                                                    | Type           | mandatory | default |
-| ------------------- | -------------------------------------------------------------- | -------------- | --------- | ------- |
-| gap                 | the gap between the items                                      | string, number | false     | 0       |
-| offset              | offset of the first and last item to the border of the wrapper | string, number | false     | 0       |
-| scrollToItemIndex   | initial scroll to the given item index starting at 0           | number         | false     | 0       |
-| activeDataAttribute | a data attribute that can be used to style the active item     | string         | false     |         |
+| Prop                | Description                                                                                                                                                    | Type              | mandatory | default  |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | --------- | -------- |
+| gap                 | the gap between the items                                                                                                                                      | string, number    | false     | 0        |
+| offset              | offset of the first and last item to the border of the wrapper                                                                                                 | string, number    | false     | 0        |
+| scrollToItemIndex   | initial scroll to the given item index starting at 0                                                                                                           | number            | false     | 0        |
+| activeDataAttribute | a data attribute that can be used to style the active item                                                                                                     | string            | false     |          |
+| layout              | layout option to render the scroller <br /> SCROLL -> renders the items in a row with a scroll <br />FLOAT -> renders the items in float layout without scroll | 'SCROLL', 'FLOAT' | false     | 'SCROLL' |
 
 ## Usage with ref
 
@@ -40,10 +41,10 @@ The component returns 2 methods to a given ref.
 
 ### Methods
 
-| method           | description                                                                                                                                                 | return value |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| scrollToIndex    | method to scroll programmaticly to an item index                                                                                                            | void         |
-| hasScrollContent | handler function to evaluate if the scroller has overflowing content ->can be used in combination with window.resize to toggle a showAll button for example | boolean      |
+| method           | description                                                                                                                                                      | return value |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| scrollToIndex    | method to scroll programmaticly to an item index                                                                                                                 | void         |
+| hasScrollContent | handler function to evaluate if the scroller has overflowing content <br /> can be used in combination with window.resize to toggle a showAll button for example | boolean      |
 
 ### Sample code
 
