@@ -1,3 +1,3 @@
-import HorizontalScroll from './components/HorizontalScroll';
+import HorizontalScroll from './HorizontalScroll';
 
 export { HorizontalScroll };

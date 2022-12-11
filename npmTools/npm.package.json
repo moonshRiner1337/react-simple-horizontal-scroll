@@ -1,0 +1,14 @@
+{
+  "main": "index.js",
+  "module": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DerWebschreiner/React-Simple-Horizontal-Scroll.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^18.0.26",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

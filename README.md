@@ -1,13 +1,24 @@
-# React MUI Simple Horizontal Scroll
+# React Simple Horizontal Scroll
 
-This is a simple horizontal scroll React component based on MUI.
+This is a simple horizontal scroll React component.
 
-The scrolling is native browser scroll, the scrollbar will be hidden by css. It has support for CSS Snapping. You can scroll initialy to a given item index or you cann scroll programmaticly with the use of a reference. You can also set a data attribute by your own. If it is set the active item will have a value of "true" otherwise "false". So you can style the active item by your own.
+The intention to build this component was to have a lightweigt horizontal scroll component with snapping and some basic features for mobile devices. A usual slider or carousel was way to heavy for my needs. It works well on all touch devices and desktop devices who has the ability to scroll horzizontal by mouse or touchpad.
+
+The scrolling is native browser scroll, the scrollbar will be hidden by CSS. It has support for CSS Snapping. You can scroll initialy to a given item index or you can scroll programmaticly with the use of a reference. You can also set a data attribute by your own. The active item will have a value of "true" otherwise "false". So you can style the active item by your own.
 
 ## Usage
 
+### Install component
+
 ```javascript
-import HorizontalScroll from './components/HorizontalScroll';
+npm i react-simple-horizontal-scroll
+```
+
+### Use in your component
+
+```javascript
+import { HorizontalScroll } from 'react-simple-horizontal-scroll';
+import type { HorizontalScrollHandle } from 'react-simple-horizontal-scroll/dist/types';
 
 <HorizontalScroll gap={10} scrollToItemIndex={2} activeDataAttribute="data-active" offset={'2rem'}>
   /** children here */
@@ -27,17 +38,22 @@ import HorizontalScroll from './components/HorizontalScroll';
 
 The component returns 2 methods to a given ref.
 
+### Methods
+
 | method           | description                                                                                                                                                 | return value |
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
 | scrollToIndex    | method to scroll programmaticly to an item index                                                                                                            | void         |
 | hasScrollContent | handler function to evaluate if the scroller has overflowing content ->can be used in combination with window.resize to toggle a showAll button for example | boolean      |
 
-```javascript
+### Sample code
+
+```typescript
 import React from 'react';
-import HorizontalScroll from './components/HorizontalScroll';
+import { HorizontalScroll } from 'react-simple-horizontal-scroll';
+import type { HorizontalScrollHandle } from 'react-simple-horizontal-scroll/dist/types';
 
 function Component() {
-  const ref = React.useRef < HorizontalScrollHandle > null;
+  const ref = React.useRef<HorizontalScrollHandle | null>(null);
   const [showAll, setShowAll] = React.useState(false);
 
   React.useEffect(() => {

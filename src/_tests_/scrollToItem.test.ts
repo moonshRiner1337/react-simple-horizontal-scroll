@@ -1,4 +1,4 @@
-import { scrollToItem } from './scrollToItem';
+import { scrollToItem } from '../lib/scrollToItem';
 
 const childrenItemMock = jest.fn().mockName('item');
 const scrollToMock = jest.fn().mockName('scrollTo');

@@ -2,13 +2,13 @@
 /* eslint-disable testing-library/no-container */
 import React, { useRef } from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
-import HorizontalScroll from './HorizontalScroll';
+import HorizontalScroll from '../lib/HorizontalScroll';
 
-import type { HorizontalScrollHandle } from './types';
+import type { HorizontalScrollHandle } from '../lib/types';
 
-import { scrollToItem } from './scrollToItem';
+import { scrollToItem } from '../lib/scrollToItem';
 
-jest.mock('./scrollToItem', () => {
+jest.mock('../lib/scrollToItem', () => {
   return {
     __esModule: true,
     scrollToItem: jest.fn().mockName('scrollToItem'),
